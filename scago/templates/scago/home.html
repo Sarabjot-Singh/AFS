@@ -1,0 +1,21 @@
+
+{% extends "scago/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+      <div class="card mx-auto pt-5">
+          <img class="rounded-circle article-img" src="{{ profile.profile_pic.url }}">
+
+          <div class="card-body">
+            <h4 class="card-title">{{ profile.user }}</h4>
+            <pre class="card-text"><h5>Mobile:{{profile.mobile}}<br>Email:{{user.email}}<br>Balance:{{profile.balance}}</h5>
+            </pre>
+              <p class="card-text mx-auto"><small class="text-muted"><h5>Your QR Code is below Please Download it and save it</h5></small></p>
+          </div>
+      </div>
+      <div class="qr-code">
+        <img class="qr" src="{{ profile.qr_code.url }}" alt="...">
+      </div>
+    </div>
+{% endblock content %}
+
